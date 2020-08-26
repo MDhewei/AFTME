@@ -2,7 +2,7 @@
 
 AFTME is an alignment-free method for the automatic mapping of 3D motifs to different FGs of a specific ligand through two-dimensional clustering. This repository contains the source codes, datasets and results for large-scale identification of FG-based protein-ligand binding motifs.
 
-Any questions or requests, please contact us: hwkobe.1027@gmail.com
+Any questions or requests, please contact us: hwkobe.1027@gmail.com or yangliupoplar@gmail.com
 
 ## AFTME source codes and usage
 
