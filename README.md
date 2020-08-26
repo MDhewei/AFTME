@@ -14,8 +14,8 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 #### Required arguments of the program:
 * -i/--inputfile:
 the 2 paths in order:   
--- the absolute path of an excel file recording all 233 ligands information.   
--- the absolute path of a folder containing txt files recording ligand nonredundant pdbID for each of 233 ligands.
+> the absolute path of an excel file recording all 233 ligands information.   
+> the absolute path of a folder containing txt files recording ligand nonredundant pdbID for each of 233 ligands.
 * -o/--outfile:  
 the absolute path of a folder to store distance matrix excel files created for each of 233 ligands.
 
