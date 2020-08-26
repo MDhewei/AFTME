@@ -4,7 +4,7 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 ## 
 
-[Motif_all](https://github.com/MDhewei/AFTME/tree/master/%20Motif_all): This folder contains the heatmaps, statistics results and figures for all the FG-binding motifs.
+[1.Motif_all](https://github.com/MDhewei/AFTME/tree/master/%20Motif_all): This folder contains the heatmaps, statistics results and figures for all the FG-binding motifs.
 
 - **Heatmaps**: Heatmaps for all the ligands generated with AFTME 
 
@@ -12,7 +12,7 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 - **statistics**: Dict files recording the motif informations for all the ligands
 
-[Datasets](https://github.com/MDhewei/AFTME/tree/master/Datasets): This folder contains the datasets used for large-scale FG-motif identification.
+[2.Datasets](https://github.com/MDhewei/AFTME/tree/master/Datasets): This folder contains the datasets used for large-scale FG-motif identification.
 
 - **NonredundantLigID**: The .txt files containing all the PDB codes used for motif extraction for each ligand
 
@@ -20,9 +20,9 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 - [PDBCodes.xlsx](https://github.com/MDhewei/AFTME/blob/master/Datasets/PDBCodes.xlsx): The excel file recording all the PDB codes used for analysis
 
-[DistanceMatrix](https://github.com/MDhewei/AFTME/tree/master/DistanceMatrix): This folder contains the excel files recording all the distance matrix generated for all the ligands.
+[3.DistanceMatrix](https://github.com/MDhewei/AFTME/tree/master/DistanceMatrix): This folder contains the excel files recording all the distance matrix generated for all the ligands.
 
-[Systematic_analysis](https://github.com/MDhewei/AFTME/tree/master/Systematic_analysis): This folder contains the files and source codes to reproduce the results for systematic analysis.
+[4.Systematic_analysis](https://github.com/MDhewei/AFTME/tree/master/Systematic_analysis): This folder contains the files and source codes to reproduce the results for systematic analysis.
 
 - [Cluster_file](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/Cluster_file): Dict file recording the motifs in each cluster.
 
