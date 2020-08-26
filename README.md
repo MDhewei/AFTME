@@ -105,6 +105,9 @@ python AFTME.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefolder" -o 
 - [ClusteringAnalysis.ipynb](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/ClusteringAnalysis.ipynb): Source codes for motif analysis within each motif cluster: FG-motif overlaps, distribution of different binding modes, affinity comparison, etc. 
 
 
+### Contacts for any questions and requests: hwkobe.1027@gmail.com
+
+
 
 
 
