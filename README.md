@@ -12,7 +12,7 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 - **statistics**: Dict files recording the motif informations for all the ligands
 
-[Datasets](https://github.com/MDhewei/AFTME/tree/master/Datasets): The folder contains the datasets used for large-scale FG-motif identification.
+[Datasets](https://github.com/MDhewei/AFTME/tree/master/Datasets): This folder contains the datasets used for large-scale FG-motif identification.
 
 - **NonredundantLigID**: The .txt files containing all the PDB codes used for motif extraction for each ligand
 
@@ -20,7 +20,23 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 - [PDBCodes.xlsx](https://github.com/MDhewei/AFTME/blob/master/Datasets/PDBCodes.xlsx): The excel file recording all the PDB codes used for analysis
 
-[DistanceMatrix](https://github.com/MDhewei/AFTME/tree/master/DistanceMatrix): The folder contains the excel files recording all the distance matrix generated for all the ligands.
+[DistanceMatrix](https://github.com/MDhewei/AFTME/tree/master/DistanceMatrix): This folder contains the excel files recording all the distance matrix generated for all the ligands.
+
+[Systematic_analysis](https://github.com/MDhewei/AFTME/tree/master/Systematic_analysis): This folder contains the files and source codes to reproduce the results for systematic analysis.
+
+- [Cluster_file](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/Cluster_file): Dict file recording the motifs in each cluster.
+
+- [FG_binding_motif_all.csv](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/FG_binding_motif_all.csv): Table recroding the information: ID, atom properties, aa compositions, etc. for all the identified motifs.
+
+- [motif_assign.xlsx](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/motif_assign.xlsx): Table recording the clustering assignments for each FG in the analysis.
+
+- [Motif_clustering.ipynb](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/Motif_clustering.ipynb): Source codes for the motif clustering: feature matrix construction, "elbow" plot, t-SNE plot, etc. and characterization (bar and pie plots).
+
+- [ClusteringAnalysis.ipynb](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/ClusteringAnalysis.ipynb): Source codes for motif analysis within each motif cluster: FG-motif overlaps, distribution of different binding modes, affinity comparison, etc. 
+
+
+
+
 
 
 
