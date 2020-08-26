@@ -74,7 +74,7 @@ the absolute path of a folder for saving an excel file recording assignment betw
 python AFTME.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefolder" -o "assignfolder"
 ```
 
-## Datasets and results of large-scale analysis
+## Datasets and large-scale-analysis results
 
 [1. Motif_all](https://github.com/MDhewei/AFTME/tree/master/%20Motif_all): This folder contains the heatmaps, statistics results and figures for all the FG-binding motifs.
 
