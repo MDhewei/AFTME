@@ -25,7 +25,7 @@ the absolute path of a folder to store distance matrix excel files created for e
 
 #### Example to run the Dismat.py:
 ```
-python DistMat.py -i "Ligand_information.xlsx" "NonredundantLigID_folder" -o "DistanceMatrix_folder"
+python DistMat.py -i "./Datasets/Ligand_information.xlsx" "./Datasets/NonredundantLigID_folder" -o "DistanceMatrix"
 ```
 
 #### [2. AFTME.py](https://github.com/MDhewei/AFTME/blob/master/AFTME.py): Source codes to extract FG-binding motifs based on ligand information and distance matrix.
@@ -52,7 +52,7 @@ the 3 paths in order:
 
 ##### Example to run the motifGen:
 ```
-python AFTME.py motifGen -i "Ligand_information.xlsx" "DistanceMatrix_folder" -o "heatmapfolder" "statisfolder" "scorefolder"
+python AFTME.py motifGen -i "./Datasets/Ligand_information.xlsx" "DistanceMatrix" -o "./Motif_all/heatmaps" "./Motif_all/statistic" "scorefolder"
 ```
 #### - assign_score: obtain assignment between artificially defined function groups and clustered function groups of each of 233 ligands, and all ligands scores based on the first stage scores. 
 
