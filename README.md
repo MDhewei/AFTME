@@ -23,8 +23,6 @@ the absolute path of a folder to store distance matrix excel files created for e
 ```
 python DistMat.py -i "Ligand_information.xlsx" "NonredundantLigID_folder" -o "DistanceMatrix_folder"
 ```
-#### Output
-233 excel files recording the distance matrix for each of 233 ligands stored in the input outfile folder.
 
 #### [2. MotifExtract.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to extract FG-binding motifs based on ligand information and distance matrix.
 
