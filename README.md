@@ -5,11 +5,11 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 ## AFTME source codes and usage
 
 ### Requirements:
-AFTME is written in Python, Python>=3.6 is needed. 
+- AFTME is written in Python, Python>=3.6 is needed. 
 
-Python Packages: Biopython, pandas, seaborn, Matplotlib, SciPy, NumPy
+- Python Packages: Biopython, pandas, seaborn, Matplotlib, SciPy, NumPy
 
-### [1.DistMat.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): create distance matrix for each of ligands from given liganfinfo and nonredundant pdbID.
+### [1. DistMat.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to create distance matrix for each of ligands from given liganfinfo and nonredundant pdbID.
 
 #### Required arguments of the program:
 * -i/--inputfile:
@@ -21,14 +21,16 @@ the absolute path of a folder to store distance matrix excel files created for e
 
 #### Example to run the Dismat.py:
 ```
-python DistMat.py -i "lig_233.xlsx" "NonredundantLigID_folder" -o "DistanceMatrix_folder"
+python DistMat.py -i "Ligand_information.xlsx" "NonredundantLigID_folder" -o "DistanceMatrix_folder"
 ```
 #### Output
 233 excel files recording the distance matrix for each of 233 ligands stored in the input outfile folder.
 
-### 2.MotifExtract.py()
-### there are 2 functions:motifGen and assign_score. The second function takes the output fils of the 1st function as input.  
+### [2. MotifExtract.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to extract FG-binding motifs based on ligand information and distance matrix.
+
+#### there are 2 functions: motifGen and assign_score. The second function takes the output fils of the 1st function as input.  
 #### - MotifGen: obtain the clustering heatmaps, corresponding clustering results for each of all 233 ligands and the first stage scores for each of the ligands comprising 2 or more function groups. 
+
 ##### Required arguments of motifGen:
 * -i/--inputfile:
 the 2 paths in order:  
@@ -39,11 +41,13 @@ the 3 paths in order:
 1.  the absolute path of a folder for saving clustering 233 heatmaps of the 233 ligands 
 2.  the absolute path of a folder for saving clustering result texts recording atoms of function group and binding motifs 
 3.  the absolute path of a folder for saving excel file recording the first stage scores of 181 ligands with 2 or more funtion groups out of 233 ligands.   
+
 ##### Example to run the motifGen:
 ```
-python motifExtract.py motifGen -i "lig_233.xlsx" "DistanceMatrix_folder" -o "heatmapfolder" "statisfolder" "scorefolder"
+python motifExtract.py motifGen -i "Ligand_information.xlsx" "DistanceMatrix_folder" -o "heatmapfolder" "statisfolder" "scorefolder"
 ```
 #### - assign_score: obtain assignment between artificially defined function groups and clustered function groups of each of 233 ligands, and all ligands scores based on the first stage scores. 
+
 ##### Required arguments of assign_score:  
 * -i/--inputfile:
 the 3 paths in order:  
@@ -52,6 +56,7 @@ the 3 paths in order:
 3.  the absolute path of a folder placing excel files recording 1st stage scores, which is generated from motifGen.(note: the folder is also used for saving the second stage scores of outfile)
 * -o/--outfile:    
 the absolute path of a folder for saving an excel file recording assignment between artificially defined function groups and clustered function groups of each of 233 ligands.  
+
 ##### Example to run the assign_score:
 ```
 python motifExtract.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefolder" -o "assignfolder"
@@ -59,7 +64,7 @@ python motifExtract.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefold
 
 ## Datasets and results of large-scale analysis
 
-[1.Motif_all](https://github.com/MDhewei/AFTME/tree/master/%20Motif_all): This folder contains the heatmaps, statistics results and figures for all the FG-binding motifs.
+[1. Motif_all](https://github.com/MDhewei/AFTME/tree/master/%20Motif_all): This folder contains the heatmaps, statistics results and figures for all the FG-binding motifs.
 
 - **Heatmaps**: Heatmaps for all the ligands generated with AFTME 
 
@@ -67,7 +72,7 @@ python motifExtract.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefold
 
 - **statistics**: Dict files recording the motif informations for all the ligands
 
-[2.Datasets](https://github.com/MDhewei/AFTME/tree/master/Datasets): This folder contains the datasets used for large-scale FG-motif identification.
+[2. Datasets](https://github.com/MDhewei/AFTME/tree/master/Datasets): This folder contains the datasets used for large-scale FG-motif identification.
 
 - **NonredundantLigID**: The .txt files containing all the PDB codes used for motif extraction for each ligand
 
@@ -75,9 +80,9 @@ python motifExtract.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefold
 
 - [PDBCodes.xlsx](https://github.com/MDhewei/AFTME/blob/master/Datasets/PDBCodes.xlsx): The excel file recording all the PDB codes used for analysis
 
-[3.DistanceMatrix](https://github.com/MDhewei/AFTME/tree/master/DistanceMatrix): This folder contains the excel files recording all the distance matrix generated for all the ligands.
+[3. DistanceMatrix](https://github.com/MDhewei/AFTME/tree/master/DistanceMatrix): This folder contains the excel files recording all the distance matrix generated for all the ligands.
 
-[4.Systematic_analysis](https://github.com/MDhewei/AFTME/tree/master/Systematic_analysis): This folder contains the files and source codes to reproduce the results for systematic analysis.
+[4. Systematic_analysis](https://github.com/MDhewei/AFTME/tree/master/Systematic_analysis): This folder contains the files and source codes to reproduce the results for systematic analysis.
 
 - [Cluster_file](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/Cluster_file): Dict file recording the motifs in each cluster.
 
