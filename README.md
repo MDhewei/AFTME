@@ -26,7 +26,7 @@ the absolute path of a folder to store distance matrix excel files created for e
 python DistMat.py -i "Ligand_information.xlsx" "NonredundantLigID_folder" -o "DistanceMatrix_folder"
 ```
 
-#### [2. MotifExtract.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to extract FG-binding motifs based on ligand information and distance matrix.
+#### [2. AFTME.py](https://github.com/MDhewei/AFTME/blob/master/AFTME.py): Source codes to extract FG-binding motifs based on ligand information and distance matrix.
 
 #### there are 2 functions: motifGen and assign_score. The second function takes the output fils of the 1st function as input.  
 #### - MotifGen: obtain the clustering heatmaps, corresponding clustering results for each of all 233 ligands and the first stage scores for each of the ligands comprising 2 or more function groups. 
@@ -50,7 +50,7 @@ the 3 paths in order:
 
 ##### Example to run the motifGen:
 ```
-python motifExtract.py motifGen -i "Ligand_information.xlsx" "DistanceMatrix_folder" -o "heatmapfolder" "statisfolder" "scorefolder"
+python AFTME.py motifGen -i "Ligand_information.xlsx" "DistanceMatrix_folder" -o "heatmapfolder" "statisfolder" "scorefolder"
 ```
 #### - assign_score: obtain assignment between artificially defined function groups and clustered function groups of each of 233 ligands, and all ligands scores based on the first stage scores. 
 
@@ -69,7 +69,7 @@ the absolute path of a folder for saving an excel file recording assignment betw
 
 ##### Example to run the assign_score:
 ```
-python motifExtract.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefolder" -o "assignfolder"
+python AFTME.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefolder" -o "assignfolder"
 ```
 
 ## Datasets and results of large-scale analysis
