@@ -1,6 +1,6 @@
 # AFTME
 
-AFTME is an alignment-free method for the automatic mapping of 3D motifs to different FGs of a specific ligand through two-dimensional clustering.
+AFTME is an alignment-free method for the automatic mapping of 3D motifs to different FGs of a specific ligand through two-dimensional clustering. This repository contains the source codes, datasets and results for large-scale identification of FG-based protein-ligand binding motifs.
 
 ## AFTME source codes and usage
 
@@ -9,7 +9,7 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 - Python Packages: Biopython, pandas, seaborn, Matplotlib, SciPy, NumPy
 
-### [1. DistMat.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to create distance matrix for each of ligands from given liganfinfo and nonredundant pdbID.
+#### [1. DistMat.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to create distance matrix for each of ligands from given liganfinfo and nonredundant pdbID.
 
 #### Required arguments of the program:
 * -i/--inputfile:
@@ -26,7 +26,7 @@ python DistMat.py -i "Ligand_information.xlsx" "NonredundantLigID_folder" -o "Di
 #### Output
 233 excel files recording the distance matrix for each of 233 ligands stored in the input outfile folder.
 
-### [2. MotifExtract.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to extract FG-binding motifs based on ligand information and distance matrix.
+#### [2. MotifExtract.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): Source codes to extract FG-binding motifs based on ligand information and distance matrix.
 
 #### there are 2 functions: motifGen and assign_score. The second function takes the output fils of the 1st function as input.  
 #### - MotifGen: obtain the clustering heatmaps, corresponding clustering results for each of all 233 ligands and the first stage scores for each of the ligands comprising 2 or more function groups. 
