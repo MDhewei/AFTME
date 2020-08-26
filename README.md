@@ -6,9 +6,10 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 ### Requirements:
 AFTME is written in Python, Python>=3.6 is needed. 
+
 Python Packages: Biopython, pandas, seaborn, Matplotlib, SciPy, NumPy
 
-[1.DistMat.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): create distance matrix for each of ligands from given liganfinfo and nonredundant pdbID.
+###[1.DistMat.py](https://github.com/MDhewei/AFTME/blob/master/DistMat.py): create distance matrix for each of ligands from given liganfinfo and nonredundant pdbID.
 
 #### Required arguments of the program:
 * -i/--inputfile:
