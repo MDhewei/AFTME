@@ -2,6 +2,62 @@
 
 AFTME is an alignment-free method for the automatic mapping of 3D motifs to different FGs of a specific ligand through two-dimensional clustering.
 
+## AFTME source codes and usage
+
+### Installation
+AFTME is written in Python, Python>=3.6 is needed.
+### Dependencies: 
+Python Packages: Biopython, pandas, seaborn, Matplotlib, SciPy, NumPy
+
+## Usage
+### 1.DistMat.py (please make sure "filepath.py" and "PDB_all" are all together in the current diresctory)
+### create distance matrix for each of ligands from given liganfinfo and nonredundant pdbID.
+#### Required arguments of the program:
+* -i/--inputfile:
+the 2 paths in order:   
+1. the absolute path of an excel file recording all 233 ligands information.   
+2. the absolute path of a folder containing txt files recording ligand nonredundant pdbID for each of 233 ligands.
+* -o/--outfile:  
+the absolute path of a folder to store distance matrix excel files created for each of 233 ligands.
+
+#### Example to run the Dismat.py:
+```
+python DistMat.py -i "lig_233.xlsx" "NonredundantLigID_folder" -o "DistanceMatrix_folder"
+```
+#### Output
+233 excel files recording the distance matrix for each of 233 ligands stored in the input outfile folder.
+
+### 2.MotifExtract.py()
+### there are 2 functions:motifGen and assign_score. The second function takes the output fils of the 1st function as input.  
+#### - MotifGen: obtain the clustering heatmaps, corresponding clustering results for each of all 233 ligands and the first stage scores for each of the ligands comprising 2 or more function groups. 
+##### Required arguments of motifGen:
+* -i/--inputfile:
+the 2 paths in order:  
+1.  the absolute path of an excel file recording all 233 ligands information  
+2.  the absolute path of a folder placing distance matrix excel files created for each of 233 ligands
+* -o/--outfile:
+the 3 paths in order:  
+1.  the absolute path of a folder for saving clustering 233 heatmaps of the 233 ligands 
+2.  the absolute path of a folder for saving clustering result texts recording atoms of function group and binding motifs 
+3.  the absolute path of a folder for saving excel file recording the first stage scores of 181 ligands with 2 or more funtion groups out of 233 ligands.   
+##### Example to run the motifGen:
+```
+python motifExtract.py motifGen -i "lig_233.xlsx" "DistanceMatrix_folder" -o "heatmapfolder" "statisfolder" "scorefolder"
+```
+#### - assign_score: obtain assignment between artificially defined function groups and clustered function groups of each of 233 ligands, and all ligands scores based on the first stage scores. 
+##### Required arguments of assign_score:  
+* -i/--inputfile:
+the 3 paths in order:  
+1.  the absolute path of an excel file recording inherent atom composition for each manualy predefined function group of each of 233 ligands.
+2.  the absolute path of a folder placing txt files recording clustered atoms of function group and binding motif for each of 233 ligands, which is genetated from motifGen.
+3.  the absolute path of a folder placing excel files recording 1st stage scores, which is generated from motifGen.(note: the folder is also used for saving the second stage scores of outfile)
+* -o/--outfile:    
+the absolute path of a folder for saving an excel file recording assignment between artificially defined function groups and clustered function groups of each of 233 ligands.  
+##### Example to run the assign_score:
+```
+python motifExtract.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefolder" -o "assignfolder"
+```
+
 ## Datasets and results of large-scale analysis
 
 [1.Motif_all](https://github.com/MDhewei/AFTME/tree/master/%20Motif_all): This folder contains the heatmaps, statistics results and figures for all the FG-binding motifs.
