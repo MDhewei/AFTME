@@ -12,6 +12,14 @@ AFTME is an alignment-free method for the automatic mapping of 3D motifs to diff
 
 - **statistics**: Dict files recording the motif informations for all the ligands
 
+[Datasets](https://github.com/MDhewei/AFTME/tree/master/Datasets): The datasets used for large-scale FG-motif identification.
+
+- **NonredundantLigID**: The .txt files containing all the PDB codes used for motif extraction for each ligand
+
+- [Ligand_information.xlsx](https://github.com/MDhewei/AFTME/blob/master/Datasets/Ligand_information.xlsx): The excel table recording the information: name, functional groups, 2d figures etc. for all the ligands involved in our analysis.
+
+
+
 
 
 
