@@ -25,7 +25,7 @@ def GetLigand(PDBCode, Ligand, chain, l):
 
 
 def GetFunctionAtomsSet(PDBCode, Ligand, chain, fix_lenth):
-    '''this function is to extract protein atoms excluded main chain atoms within 5 Å of the ligand atoms
+    '''this function is to extract protein atoms excluded main chain atoms within 5 Å of the ligand atoms.
        atoms within R to any atoms of the ligand are determined as functional atoms
        o input: (1) PDBCode: a valid pdb code which is named in scheme pdbcode.pdb
                 (2) Ligand: the ligand id e.g.,ATP
@@ -86,16 +86,15 @@ def GetAtomToLigandDistanceDict(PDBCode, Ligand, fix_lenth, Chain):
 
 def writeLigFAS(LigInfo, NonRedunID, DistFolder):
     '''this function is to obtain functional atoms distance to their binding ligand for all ligands.
-       o input: (1) LigInfo: the path of a excel file recording all 233 ligands information
+       o input: (1) LigInfo: the path of an excel file recording all 233 ligands information
                 (2) NonRedunID: the path of a folder containing txt files written ligand nonredundant
                     pdbID for each of 233 ligand
-                (3) DistFolder: the folder to place 233 .xlsx files, write fas distance to the ligand binding into
-                    _dismat.xlsx file  for each of 233 ligands
-       o output: for each of 233 ligands, write fas distance to the ligand binding into  _dismat.xlsx file,
-                 and there will be 233 .xlsx files
-                 each .xlsx file includes:
-                 fas name: all fas binding the ligand, which are named in scheme: "pdbID_AminoAcid+AminoAcidID_atom"
-                 ligand atoms: all the atom names consisting of the ligand
+                (3) DistFolder: the folder for saving distance matrix excel files created for each of 233 ligands.
+       o output: for each of 233 ligands, write fas distance to the binding ligand into  _dismat.xlsx file,
+                 and there will be 233 .xlsx files in the DistFolder.
+                 each .xlsx file includes a distance matrix:
+                 fas name(row): all fas binding the ligand, which are named in scheme: "pdbID_AminoAcid+AminoAcidID_atom"
+                 ligand atoms(column): all the atom names consisting of the ligand
                  distance: the distance from fas to each of the ligand atoms.
     '''
     df = pd.read_excel(LigInfo)
@@ -121,13 +120,11 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="create distance matrix for each"
                                                  "of ligands from given liganfinfo and pdbID")
     # Add required parameters
-    parser.add_argument("-i", "--inputfile", type=str, help="the 2 input files in order: a excel file recording all 233 "
+    parser.add_argument("-i", "--inputfile", type=str, help="the 2 input files in order: an excel file recording all 233 "
                                                            "ligands information, and a folder containing txt files "
                                                            "written ligand nonredundant pdbID for each of 233 ligand",
                         nargs=2, required=True)
-    parser.add_argument("-o", "--outfile", type=str, help="the folder to place 233 .xlsx files, write fas distance to "
-                                                          "the ligand binding into  _dismat.xlsx file  for each of "
-                                                          "233 ligands", required=True)
+    parser.add_argument("-o", "--outfile", type=str, help="the folder for saving 233 .xlsx files rescording the distance matrix for each of 233 ligands respectively ", required=True)
     # Obtain parameters from user input with commandline
     args = parser.parse_args()
     # assign the input parameters to variables
