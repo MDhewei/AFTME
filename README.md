@@ -15,10 +15,11 @@ Any questions or requests, please contact us: hwkobe.1027@gmail.com or yangliupo
 
 #### Required arguments of the program:
 * -i/--inputfile:
-the 2 paths in order:   
-> the absolute path of an excel file recording all 233 ligands information. 
+the 2 paths in order: 
 
-> the absolute path of a folder containing txt files recording ligand nonredundant pdbID for each of 233 ligands.
+1. the absolute path of an excel file recording all 233 ligands information. 
+
+2. the absolute path of a folder containing txt files recording ligand nonredundant pdbID for each of 233 ligands.
 
 * -o/--outfile:  
 the absolute path of a folder to store distance matrix excel files created for each of 233 ligands.
@@ -37,18 +38,18 @@ python DistMat.py -i "./Datasets/Ligand_information.xlsx" "./Datasets/Nonredunda
 * -i/--inputfile:
 the 2 paths in order:  
 
-> the absolute path of an excel file recording all 233 ligands information  
+1. the absolute path of an excel file recording all 233 ligands information  
 
-> the absolute path of a folder placing distance matrix excel files created for each of 233 ligands
+2. the absolute path of a folder placing distance matrix excel files created for each of 233 ligands
 
 * -o/--outfile:
 the 3 paths in order:  
 
-> the absolute path of a folder for saving clustering 233 heatmaps of the 233 ligands 
+1. the absolute path of a folder for saving clustering 233 heatmaps of the 233 ligands 
 
-> the absolute path of a folder for saving clustering result texts recording atoms of function group and binding motifs 
+2. the absolute path of a folder for saving clustering result texts recording atoms of function group and binding motifs 
 
-> the absolute path of a folder for saving excel file recording the first stage scores of 181 ligands with 2 or more funtion groups out of 233 ligands.   
+3. the absolute path of a folder for saving excel file recording the first stage scores of 181 ligands with 2 or more funtion groups out of 233 ligands.   
 
 ##### Example to run the motifGen:
 ```
@@ -60,11 +61,11 @@ python AFTME.py motifGen -i "./Datasets/Ligand_information.xlsx" "DistanceMatrix
 * -i/--inputfile:
 the 3 paths in order:  
 
-> the absolute path of an excel file recording inherent atom composition for each manualy predefined function group of each of 233 ligands.
+1. the absolute path of an excel file recording inherent atom composition for each manualy predefined function group of each of 233 ligands.
 
-> the absolute path of a folder placing txt files recording clustered atoms of function group and binding motif for each of 233 ligands, which is genetated from motifGen.
+2. the absolute path of a folder placing txt files recording clustered atoms of function group and binding motif for each of 233 ligands, which is genetated from motifGen.
 
-> the absolute path of a folder placing excel files recording 1st stage scores, which is generated from motifGen.(note: the folder is also used for saving the second stage scores of outfile)
+3. the absolute path of a folder placing excel files recording 1st stage scores, which is generated from motifGen.(note: the folder is also used for saving the second stage scores of outfile)
 
 * -o/--outfile:    
 the absolute path of a folder for saving an excel file recording assignment between artificially defined function groups and clustered function groups of each of 233 ligands.  
