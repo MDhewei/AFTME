@@ -71,7 +71,7 @@ def motifGen(LigInfo, DistFolder, HeatFolder, StatisFolder, ScoreFolder):
                 (2) DistFolder: the location of folder placing distance matrix excel files created for each of 233 ligands
                 (3) HeatFolder: the location of folder for saving 233 clustering heatmaps of the 233 ligands
                 (4) StatisFolder: the location of the folder for saving clustering results txt
-                                  recording atoms of function group and binding motifs
+                                  recording atoms of function group and binding motifs mapped.
                 (5) ScoreFolder: the location of folder placing excel file recording the first stage scores
                                  of 181 ligands with 2 or more function groups out of 233 ligands.
 
@@ -146,7 +146,7 @@ def dic_num2fg(fuc, cls):
 
 def assign_score(AtomsLigand, StatisFolder, AssignFolder, ScoreFolder):
     '''this function is to obtain assignment between artificially defined function groups and clustered function groups
-       of each of 233 ligands,  and all ligands scores based on the first stage scores
+       of each of 233 ligands,  and the second stage scores based on the first stage scores for all ligands.
        o input: (1) AtomsLigand: the location of excel file recording inherent atom composition for each manually
                     predefined function group of each of 233 ligands.
                 (2) StatisFolder: the location of the folder placing txt files recording clustered atoms of function group
@@ -155,7 +155,7 @@ def assign_score(AtomsLigand, StatisFolder, AssignFolder, ScoreFolder):
                                   defined function groups and clustered function groups of each of 233 ligands.
                 (4) ScoreFolder: the location of folder placing an excel file recording 2nd stage scores for ligands
        o output: write the assignment of functional group names and cluster numbers for
-                 each of all ligands into .xlsx file, and write the second scores based on the first scores
+                 each of all ligands into .xlsx file, and write the second stage scores based on the first stage scores
                  for each of all ligands into .xlsx file.
                  return 2 dict recording scores and assignments for all ligands.
     '''
@@ -179,7 +179,7 @@ def assign_score(AtomsLigand, StatisFolder, AssignFolder, ScoreFolder):
             if len(result) == len(clsted_atoms):
                 score1 = eval(df_score1st.loc[ligand]["scores"])
                 for g in sorted(score1.keys()):
-                    # calculate the 2nd score combined with the 1st score
+                    # calculate the 2nd score based on the 1st score
                     s2 = score1[g] * 0.5 + sum(result["cluster%d" % g][1]) * 0.25
                     value.append((result["cluster%d" % g][0], s2))
                     ass["cluster%d" % g] = result["cluster%d" % g][0]
