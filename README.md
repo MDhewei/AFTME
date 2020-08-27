@@ -104,7 +104,11 @@ python AFTME.py assign_score -i "atom_233.xlsx" "statisfolder" "scorefolder" -o 
 
 - [Motif_clustering.ipynb](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/Motif_clustering.ipynb): Source codes for the motif clustering: feature matrix construction, "elbow" plot, t-SNE plot, etc. and characterization (bar and pie plots).
 
-- [ClusteringAnalysis.ipynb](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/ClusteringAnalysis.ipynb): Source codes for motif analysis within each motif cluster: FG-motif overlaps, distribution of different binding modes, affinity comparison, etc. 
+- [ClusteringAnalysis.ipynb](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/ClusteringAnalysis.ipynb): Source codes for motif analysis within each motif cluster: FG-motif overlaps, distribution of different binding modes, affinity comparison, etc.
+
+- [motifanalyse.py](https://github.com/MDhewei/AFTME/blob/master/Systematic_analysis/motifanalyse.py): Source codes for quantitative representation and visualization of FG-binding motifs and conservation evaluation among different ligand-binding proteins.
+
+
 
 
 
