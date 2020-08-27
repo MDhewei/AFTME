@@ -94,8 +94,8 @@ def motifplot(G, proatom_order, lig_name, MotifFolder):
                 (3) lig_name: the ligand name
                 (4) MotifFolder: the location of a folder to place plots that display motif features
        o output: save the pictures into motifFolder folder.
-                 return 2 pictures, one is a picture comprising bar plot and pie chart,
-                 and the other one is a venn plot
+                 for each of 233 ligands:
+                    return 2 pictures, one is a picture comprising bar plot and pie chart,and the other one is a venn plot.
                  note: if the number of function groups for one ligand is more than 3, there will be only one picture.
     '''
     fig, axes = plt.subplots(G, 2, figsize=(8, 3 * G), dpi=300)
@@ -123,9 +123,9 @@ def motifplot(G, proatom_order, lig_name, MotifFolder):
         fig1.savefig(os.path.join(MotifFolder, "%s_provenn.png" % lig_name), dpi=300)
 
 
-# read the function group and ligands that contain the function group
+# read the function group and ligands that contain the function group from the file "FG_inLigand"
 df_fg = pd.read_excel(FG_inLigand, index_col=0)
-# read the ligand and its function groups with matched clustering number
+# read the ligand and its function groups with matched clustering number from the file "assignFolder" under the folder "assignFolder"
 df_assign = pd.read_excel(os.path.join(assignFolder, "assign.xlsx"), index_col=0)
 
 
@@ -185,10 +185,10 @@ def fg_reuse(func, fuc_list, labels_lig):
        o input: (1) func: string, denotes the function group
                 (2) func_list: a list of motif name that binds the function group
                 (3) labels_lig: a list of ligand names
-       o output: return 3 plot given the function group
+       o output: return 3 plots from given the function group
                  the fist one is to display the consistency of 20 amino acids distribution for given motifs
                  the second one is to dispaly the consistency of 6 atop properties distribution for given motifs
-                 the third one is to  display the consistency of integration atom and amino acid distribution for all
+                 the third one is to display the consistency of integration atom and amino acid distribution for all
                  motifs binding the given function groups
     '''
     loc1 = np.arange(0.2, 29, step=1.5)
@@ -231,8 +231,7 @@ def fg_reuse(func, fuc_list, labels_lig):
     for m, n in itertools.combinations(fuc_ligcls_rand, 2):
         p_fuc_rand.append(stats.pearsonr(freq_list(m)[0] + freq_list(m)[1], freq_list(n)[0] + freq_list(n)[1])[0])
 
-    # create a boxplot displaying distributions of fg-bind motif pairs pearson correlation
-    # vs random motif pars pearson correlation
+    # create a boxplot displaying distributions of fg-bind motif pairs pearson correlation VS random motif pars pearson correlation
     fig3, axes3 = plt.subplots()
     axes3.boxplot(np.array(p_fuc),  boxprops=dict(facecolor="#659435"), medianprops=dict(lw=2), showfliers=False,
                   patch_artist=True, positions=[0.25])
@@ -305,8 +304,7 @@ def PPC_overall():
     # randomly select pairs from all pairs with equal size of same pairs
     all_random = np.random.choice(all, size=3228)
 
-    # create a boxplot displaying distributions of same fg-bind motif pairs pearson correlation
-    # vs random motif pars pearson correlation
+    # create a boxplot displaying distributions of same fg-bind motif pairs pearson correlation VS random motif pars pearson correlation
     fig, axes = plt.subplots()
     axes.boxplot(sames, patch_artist=True, boxprops=dict(facecolor="#659435"), medianprops=dict(lw=2),
                  showfliers=False, positions=[0.1], widths=0.45)
